@@ -17,8 +17,11 @@ DRINK_LIST = drinks["drinks"].map {|drink| drink['strIngredient1'] }
 
 
 #  add 10 drinks
-10.times do
-  Ingredient.create(name: DRINK_LIST[rand(0..DRINK_LIST.length - 1)])
+i = 0
+while i <= DRINK_LIST.length
+  Ingredient.create(name: DRINK_LIST[i])
+
+  i += 1
 end
 
-Cocktail.create(name: 'Manhattan')
+
