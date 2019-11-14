@@ -1,7 +1,9 @@
 <h2><%= @cocktail.name %></h2>
 
 <% @cocktail.doses.each do |dose| %>
-  <li><%= dose.ingredient.name %> - <%= dose.description %> <%=link_to '🗑', cocktail_dose_path(dose), method: :delete %></li>
+<!-- needed to un-nest the dose delete route in order to be able to delete specific dose instead of /cocktail/id/dose/id -->
+<!-- check routes to understand this more -->
+  <li><%= dose.ingredient.name %> - <%= dose.description %> <%=link_to '🗑', dose_path(dose), method: :delete %></li>
 <% end %>
 <br>
 <br>

@@ -6,7 +6,6 @@ class DosesController < ApplicationController
     end
 
     def create
-      # raise
       @cocktail = Cocktail.find(params[:cocktail_id])
       @dose = Dose.new(dose_params)
       @dose.cocktail = @cocktail
@@ -18,8 +17,10 @@ class DosesController < ApplicationController
     end
 
     def destroy
+
       @dose = Dose.find(params[:id])
       @dose.destroy
+      redirect_to cocktail_path(@dose.cocktail)
     end
 
     private
@@ -28,3 +29,6 @@ class DosesController < ApplicationController
       params.require(:dose).permit(:description, :ingredient_id)
     end
   end
+
+
+# adding new cocktail id and ingreidnet id for each iteration of adding an ingredient

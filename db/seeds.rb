@@ -8,12 +8,13 @@
 require 'open-uri'
 require 'json'
 
+Ingredient.destroy_all
 
 url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
 url_serialized = open(url).read
 drinks = JSON.parse(url_serialized)
 
-DRINK_LIST = drinks["drinks"].map {|drink| drink['strIngredient1'] }
+DRINK_LIST = drinks["drinks"].map {|drink| drink['strIngredient1'] }.sort
 
 
 #  add 10 drinks
