@@ -1,9 +1,18 @@
-<% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %> <%= link_to '🗑', cocktail_path(cocktail), method: :delete %></li>
-<% end %>
+<h1 class="header-text">Mister Cocktail's Menu</h1>
+<div class="header">
+  <%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-outline-dark create-button' %>
+</div>
+<div class="cocktail-grid">
+  <% @cocktails.each_with_index do |cocktail, index| %>
+  <div class="card" style="width: 18rem;">
+   <%= link_to cocktail_path(cocktail) do  %>
+    <%= image_tag picturize(index) %>
+    <% end %>
+    <div class="card-body">
+      <p class="card-text"><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-<br>
-<br>
 
-
-<%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-outline-dark' %>

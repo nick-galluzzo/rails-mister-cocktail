@@ -1,5 +1,6 @@
 <h2><%= @cocktail.name %></h2>
 
+
 <% @cocktail.doses.each do |dose| %>
 <!-- needed to un-nest the dose delete route in order to be able to delete specific dose instead of /cocktail/id/dose/id -->
 <!-- check routes to understand this more -->
