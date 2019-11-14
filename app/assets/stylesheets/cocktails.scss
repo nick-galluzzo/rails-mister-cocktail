@@ -4,16 +4,6 @@
 
 $blue: #2e84ea;
 
-.header-text {
-  text-align: center;
-  color: #ff6968;
-  font-family: $headers-font;
-
-  &:hover {
-    opacity: .8;
-  }
-}
-
 .cocktail-grid {
   display: grid;
   grid-gap: 10px;
@@ -44,9 +34,11 @@ $blue: #2e84ea;
   }
 }
 
-.header {
+.container-header {
   display: flex;
+  flex-direction: rows;
   justify-content: center;
+  align-items: center;
   margin-top: 1rem;
 }
 
