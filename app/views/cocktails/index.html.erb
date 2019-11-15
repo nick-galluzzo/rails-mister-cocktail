@@ -1,11 +1,12 @@
-<div class="cocktail-grid">
-  <% @cocktails.each do |cocktail| %>
-  <div class="card card-img-top">
-   <%= link_to cocktail_path(cocktail) do  %>
-    <%= cl_image_tag(cocktail.photo,
-         class: 'cocktail-photo')%>
-    <% end %>
-    <div class="card-body">
+<div class="container">
+  <div class="cocktail-grid">
+    <% @cocktails.each do |cocktail| %>
+    <div class="card card-img-top">
+     <%= link_to cocktail_path(cocktail) do  %>
+     <%= cl_image_tag(cocktail.photo,
+     class: 'cocktail-photo')%>
+     <% end %>
+     <div class="card-body">
       <p class="card-text"><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
     </div>
   </div>
@@ -15,11 +16,12 @@
     <%= link_to new_cocktail_path do %>
     <!-- <a href="#" class="btn-add"> -->
       <div class="btn-add">
-      <i class="fa fa-plus"></i>
+        <i class="fa fa-plus"></i>
       </div>
     </a>
     <% end %>
   </div>
+</div>
 </div>
 
 
