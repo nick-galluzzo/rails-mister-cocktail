@@ -4,7 +4,7 @@
   </div>
 </div>
 <div class="cocktail-grid">
-  <% @cocktails.each_with_index do |cocktail, index| %>
+  <% @cocktails.each do |cocktail| %>
   <div class="card" style="width: 18rem;">
    <%= link_to cocktail_path(cocktail) do  %>
     <%= image_tag picturize(index) %>
