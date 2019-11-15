@@ -1,4 +1,5 @@
 <h2><%= @cocktail.name %></h2>
+<%= link_to 'Delete', cocktail_path(@cocktail), class: 'btn btn-outline-danger' %>
 
 
 <% @cocktail.doses.each do |dose| %>
