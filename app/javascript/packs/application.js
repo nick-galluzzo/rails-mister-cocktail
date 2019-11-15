@@ -17,7 +17,12 @@
 import 'bootstrap';
 // console.log('Hello World from Webpacker')
 
-console.log('hi')
+$(function () {
+  $(document).scroll(function () {
+    var $nav = $(".fixed-top");
+    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+  });
+});
 
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)

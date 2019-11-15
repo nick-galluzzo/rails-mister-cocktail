@@ -1,6 +1,7 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css";
 
 $blue: #2e84ea;
 
@@ -19,9 +20,6 @@ $blue: #2e84ea;
   min-width: 100%;
   min-height: 40vh;
 
-.transparent {
-  background-color : black;
-}
 
 .card  {
   height: 100%;
@@ -47,13 +45,19 @@ $blue: #2e84ea;
     font-weight: bold;
   }
 
-
-.container-header {
+#navigation {
   display: flex;
   flex-direction: rows;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+
+  img {
+    opacity: 1;
+  }
+}
+
+.container-header {
+
 }
 
 .create-button {
@@ -69,4 +73,17 @@ $blue: #2e84ea;
 body {
   position: relative;
 }
+
+.fixed-top {
+  opacity: 1;
+  background: #f4f4f4
+}
+
+.fixed-top.scrolled {
+  background-color: #f4f4f4 !important;
+  opacity: .8;
+  transition: background-color 200ms linear;
+
+}
+
 
