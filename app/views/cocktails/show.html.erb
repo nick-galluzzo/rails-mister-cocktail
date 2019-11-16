@@ -1,24 +1,26 @@
 <div class="container">
-<h2><%= @cocktail.name %></h2>
-<%= link_to 'Delete', cocktail_path(@cocktail), class: 'btn btn-outline-danger', method: :delete %>
+  <div class="form-header">
+    <h2><%= @cocktail.name %></h2>
+    <%= link_to 'Delete', cocktail_path(@cocktail), id: 'delete-cocktail', class: 'btn btn-outline-danger', method: :delete %>
+  </div>
 
 
-<% @cocktail.doses.each do |dose| %>
-<!-- needed to un-nest the dose delete route in order to be able to delete specific dose instead of /cocktail/id/dose/id -->
-<!-- check routes to understand this more -->
+  <% @cocktail.doses.each do |dose| %>
+  <!-- needed to un-nest the dose delete route in order to be able to delete specific dose instead of /cocktail/id/dose/id -->
+  <!-- check routes to understand this more -->
   <li><%= dose.ingredient.name %> - <%= dose.description %> <%=link_to '🗑', dose_path(dose), method: :delete %></li>
-<% end %>
-<br>
-<br>
+  <% end %>
+  <br>
+  <br>
 
-<h4>Add an ingredient</h4>
-<%= simple_form_for [@cocktail, @dose] do |f|%>
+  <h4>Add an ingredient</h4>
+  <%= simple_form_for [@cocktail, @dose] do |f|%>
   <%= f.association :ingredient %>
   <%= f.input :description %>
   <%= f.submit 'Add ingredients', class: 'btn btn-outline-success' %>
-<% end %>
+  <% end %>
 
-<br>
+  <br>
 
-<%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark' %>
+  <%= link_to 'Go Back', cocktails_path, class: 'btn btn-outline-dark' %>
 </div>

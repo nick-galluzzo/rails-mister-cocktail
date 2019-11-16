@@ -9,3 +9,18 @@ $blue: #2e84ea;
   margin-top: 76px;
 }
 
+.form-header {
+  display: flex;
+  align-items: center;
+
+  h2 {
+    font-size: 3em;
+  }
+}
+
+#delete-cocktail {
+  margin-left: 20px;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+
