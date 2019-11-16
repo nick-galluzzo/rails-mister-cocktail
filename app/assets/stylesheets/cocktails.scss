@@ -2,25 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css";
-
-$blue: #2e84ea;
-
-.container {
-  margin-top: 76px;
-}
-
-.form-header {
-  display: flex;
-  align-items: center;
-
-  h2 {
-    font-size: 3em;
-  }
-}
-
-#delete-cocktail {
-  margin-left: 20px;
-  padding: 4px;
-  margin-bottom: 10px;
-}
-
