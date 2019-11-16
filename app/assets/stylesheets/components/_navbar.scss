@@ -1,28 +1,24 @@
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: #f9f9f9;
-//   padding: 0;
-//   display: flex;
-//   justify-content: center;
-//   background-color: transparent;
-//   transition: 0.5s background-color ease;
-// }
+#navigation {
+  display: flex;
+  flex-direction: rows;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
+  img {
+    opacity: 1;
+  }
+}
 
+.fixed-top {
+  opacity: 1;
+  background: #f4f4f4
+}
 
-// // .navbar-lewagon .navbar-collapse {
-// //   flex-grow: 0;
-// // }
+.fixed-top.scrolled {
+  background-color: #f4f4f4 !important;
+  opacity: .8;
+  transition: background-color 200ms linear;
 
-// .navbar-lewagon .navbar-brand img {
-//   width: 300px;
-// }
-
-// .sticky {
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   z-index: 1;
-// }
-
+}
 
