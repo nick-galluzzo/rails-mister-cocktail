@@ -1,3 +1,11 @@
+.show-container {
+  margin: 100px auto;
+}
+.drink-container{
+  display: flex;
+  flex-direction: column;
+}
+
 .form-header {
   display: flex;
   align-items: center;
@@ -8,17 +16,26 @@
 }
 
 #delete-cocktail {
-  margin-left: 20px;
+  margin-left: 1rem;
   padding: 4px;
   margin-bottom: 10px;
 }
 
 .grid-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 20vh;
 }
 
+
+.ingredient-list li {
+  list-style-type: none;
+}
+
+.ingredient-list {
+  padding: 0
+}
 
 .add-ingredient-btn{
   display: inline-block;
