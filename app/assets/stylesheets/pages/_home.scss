@@ -7,3 +7,11 @@
 .modal {
   opacity: 1;
 }
+
+.modal.fade.in {
+  opacity: 1;
+}
+
+.modal-backdrop.in {
+  opacity: .5;
+}
