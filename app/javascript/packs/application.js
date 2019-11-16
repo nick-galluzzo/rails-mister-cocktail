@@ -15,6 +15,7 @@
 //
 
 import 'bootstrap';
+import '@client-side-validations/client-side-validations';
 // console.log('Hello World from Webpacker')
 
 $(function () {
