@@ -1,9 +1,15 @@
 <div class="container">
+  <%= cl_image_tag(@cocktail.photo,
+  class: 'page-photo')%>
   <section class="grid-form">
     <div class="drink-container">
       <div class="form-header">
-        <h2><%= @cocktail.name %></h2>
-        <%= link_to 'Delete', cocktail_path(@cocktail), id: 'delete-cocktail', class: 'btn btn-outline-danger', method: :delete %>
+        <div class="cocktail-name">
+          <h2><%= @cocktail.name %></h2>
+        </div>
+        <div class="delete-button">
+          <%= link_to 'Delete', cocktail_path(@cocktail), id: 'delete-cocktail', class: 'btn btn-outline-danger', method: :delete %>
+        </div>
       </div>
       <div class="ingredients">
         <% @cocktail.doses.each do |dose| %>
