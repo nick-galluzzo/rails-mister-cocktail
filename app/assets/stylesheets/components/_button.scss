@@ -68,6 +68,8 @@
   overflow: hidden;
   transition: .4s;
   opacity: .8;
+  position: sticky;
+  top: 40%;
 }
 
 .add-ingredient-btn:hover{

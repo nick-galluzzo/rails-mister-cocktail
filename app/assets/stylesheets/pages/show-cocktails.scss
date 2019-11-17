@@ -7,6 +7,10 @@ li {
   padding-top: 20px;
 }
 
+.ingredients p {
+  padding-top: 10px;
+}
+
 // Containers
 .show-container {
   margin: 100px auto;
@@ -21,7 +25,7 @@ li {
 .grid-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 20vh;
+  height: 100%;
   margin-top: 100px;
 }
 
