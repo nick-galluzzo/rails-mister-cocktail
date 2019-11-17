@@ -23,7 +23,7 @@
 
     </div>
 
-
+  <section class="add-functionality">
     <div class="add-ingredient-section">
       <!-- Button -->
       <a href="#" class="add-ingredient-btn" data-toggle="modal" data-target="#add-ingredient-modal">Add Ingredient</a>
@@ -46,9 +46,36 @@
               <% end %>
             </div>
           </div>
+
         </div>
       </div>
     </div>
+    <div class="add-review-section">
+      <a href="#" class="add-review-btn" data-toggle="modal" data-target="#add-review-modal">Add Review</a>
+      <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fade" id="add-review-modal">Add an Ingredient</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for [@cocktail, @review] do |f|%>
+              <%= f.input :rating %>
+              <%= f.input :comment %>
+              <div class="modal-footer">
+                <%= f.submit 'Add review', class: 'btn btn-outline-dark' %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
   </section>
 </div>
 

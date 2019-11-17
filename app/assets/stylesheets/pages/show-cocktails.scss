@@ -2,6 +2,10 @@
   margin: 100px auto;
 }
 
+.add-functionality {
+  display: flex;
+}
+
 .page-photo {
   height: 30rem;
   width: 100%;
@@ -51,6 +55,7 @@
 
 .add-ingredient-section {
   margin: 0 auto;
+  width: 50%;
 }
 
 .add-ingredient-btn{
@@ -74,4 +79,32 @@
     text-decoration: none;
     color: white;
 }
+
+.add-review-section {
+  width: 100%;
+}
+
+.add-review-btn{
+  display: inline-block;
+  text-decoration: none;
+  background: #9f88fc;
+  color: #FFF;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  transition: .4s;
+  opacity: .8;
+}
+
+.add-review-btn:hover{
+    background: #fe8684;
+    text-decoration: none;
+    color: white;
+}
+
+
 
