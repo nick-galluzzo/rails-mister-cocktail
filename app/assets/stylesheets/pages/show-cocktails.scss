@@ -1,12 +1,15 @@
-.show-container {
-  margin: 100px auto;
+li {
+  list-style-type: none;
 }
 
-.page-photo {
-  height: 30rem;
-  width: 100%;
-  object-fit: cover;
-  border: 5px solid white;
+.list {
+  padding-left: 0;
+  padding-top: 20px;
+}
+
+// Containers
+.show-container {
+  margin: 100px auto;
 }
 
 .left-container {
@@ -15,6 +18,23 @@
     align-items: center;
 }
 
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 20vh;
+  margin-top: 100px;
+}
+
+// Image
+.page-photo {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+
+// Headers
 .form-header {
   display: flex;
   flex-direction: column;
@@ -27,77 +47,26 @@
   }
 }
 
-.grid-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 20vh;
-  margin-top: 100px;
-}
-
-li {
-  list-style-type: none;
-}
-
-.list {
-  padding-left: 0;
-  padding-top: 20px;
-}
+// Add Ingredients
 
 .add-ingredient-section {
   margin: 0 auto;
   width: 50%;
 }
 
-.add-ingredient-btn{
-  display: inline-block;
-  text-decoration: none;
-  background: #87befd;
-  color: #FFF;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
-  overflow: hidden;
-  transition: .4s;
-  opacity: .8;
-}
 
-.add-ingredient-btn:hover{
-    background: #fe8684;
-    text-decoration: none;
-    color: white;
-}
-
+// Review Section
 .add-review-section {
   width: 100%;
 }
 
-.add-review-btn{
-  display: inline-block;
-  text-decoration: none;
-  background: #9f88fc;
-  color: #FFF;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
-  overflow: hidden;
-  transition: .4s;
-  opacity: .8;
-}
-
-.add-review-btn:hover{
-    background: #fe8684;
-    text-decoration: none;
-    color: white;
-}
-
+// Review - List Items
 .list.review-list {
   padding-top: 0;
+
+  p {
+    text-align: center;
+  }
 }
 
 .review-list li:first-child {
