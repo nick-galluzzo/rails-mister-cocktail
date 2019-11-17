@@ -23,7 +23,6 @@
           </ul>
         <% end %>
       </div>
-
     </div>
     <div class="add-ingredient-section">
       <!-- Button -->
@@ -85,13 +84,11 @@
       <% if @cocktail.reviews.length < 1 %>
         <p> Sorry, no reviews exist yet. You can be the first! 😀🥂</p>
       <% else %>
-
         <% @cocktail.reviews.each do |review| %>
          <li><%= '⭐️' * review.rating %> -
              <%= review.comment %>
          </li>
       <% end %>
-
       <% end %>
       </div>
     </div>
