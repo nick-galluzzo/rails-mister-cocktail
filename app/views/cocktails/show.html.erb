@@ -2,7 +2,7 @@
   <%= cl_image_tag(@cocktail.photo,
   class: 'page-photo')%>
   <section class="grid-form">
-    <div class="drink-container">
+    <div class="left-container">
       <div class="form-header">
         <div class="cocktail-name">
           <h2><%= @cocktail.name %></h2>
@@ -15,15 +15,13 @@
         <% @cocktail.doses.each do |dose| %>
         <!-- needed to un-nest the dose delete route in order to be able to delete specific dose instead of /cocktail/id/dose/id -->
         <!-- check routes to understand this more -->
-        <ul class="ingredient-list">
+        <ul class="list">
           <li><%= dose.ingredient.name %> - <%= dose.description %> <%=link_to '🗑', dose_path(dose), method: :delete %></li>
           <% end %>
         </ul>
       </div>
 
     </div>
-
-  <section class="add-functionality">
     <div class="add-ingredient-section">
       <!-- Button -->
       <a href="#" class="add-ingredient-btn" data-toggle="modal" data-target="#add-ingredient-modal">Add Ingredient</a>
@@ -36,6 +34,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            <!-- modal -->
             <div class="modal-body">
               <%= simple_form_for [@cocktail, @dose], validate: true do |f|%>
               <%= f.association :ingredient %>
@@ -46,11 +45,12 @@
               <% end %>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-    <div class="add-review-section">
+  </section>
+  <section class="grid-form">
+    <div class="left-container">
       <a href="#" class="add-review-btn" data-toggle="modal" data-target="#add-review-modal">Add Review</a>
       <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -71,11 +71,27 @@
               <% end %>
             </div>
           </div>
-
         </div>
       </div>
     </div>
-  </section>
+    <div class="reviews-list">
+      <div id="review-header">
+        <h1><%= @cocktail.name %> Reviews</h1>
+      </div>
+      <div class="list review-list">
+      <% if @cocktail.reviews.length < 1 %>
+        <p> Sorry, no reviews exist yet. You can be the first! 😀🥂</p>
+      <% else %>
+
+        <% @cocktail.reviews.each do |review| %>
+         <li><%= '⭐️' * review.rating %> -
+             <%= review.comment %>
+         </li>
+      <% end %>
+
+      <% end %>
+      </div>
+    </div>
   </section>
 </div>
 
