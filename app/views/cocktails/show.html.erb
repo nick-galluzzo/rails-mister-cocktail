@@ -62,7 +62,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <%= simple_form_for [@cocktail, @review] do |f|%>
+              <%= simple_form_for [@cocktail, @review], validates: true do |f|%>
               <%= f.input :rating %>
               <%= f.input :comment %>
               <div class="modal-footer">

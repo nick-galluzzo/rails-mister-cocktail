@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :'cocktails/show'
+      render :new
     end
   end
 
@@ -17,9 +17,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @cocktail = Cocktail.find(params[:cocktail_id])
     @review.destroy
-    redirect_to cocktail_path(@cocktail)
+    redirect_to cocktail_path(@review.cocktail)
   end
 
   private

@@ -1,7 +1,65 @@
-<h2>Add ingredients to <%= @cocktail.name %></h2>
-
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.association :ingredient %>
-  <%= f.input :description %>
-  <%= f.submit "Submit Ingredients", class: 'btn btn-primary' %>
-<% end %>
+<div class="container">
+<%= cl_image_tag(@cocktail.photo,
+class: 'page-photo')%>
+<!-- alert -->
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Uh oh!</h4>
+  <p>It looks like you forgot some things...</p>
+  <hr>
+  <%  @dose.errors.full_messages.each do |error|%>
+    <li> - <%= error %></li>
+  <% end %>
+  <br>
+  <p>Try again?</p>
+  <br>
+  <p>- OR - </p>
+  <br>
+  <p><%= link_to 'click here', cocktail_path(@cocktail) %> to return to continue browsing.</p>
+</div>
+<section class="grid-form">
+  <div class="left-container">
+    <div class="form-header">
+      <div class="cocktail-name">
+        <h2><%= @cocktail.name %></h2>
+      </div>
+      <div class="delete-button">
+        <%= link_to 'Delete', cocktail_path(@cocktail), id: 'delete-cocktail', class: 'btn btn-outline-danger', method: :delete %>
+      </div>
+    </div>
+    <div class="ingredients">
+      <% @cocktail.doses.each do |dose| %>
+      <!-- needed to un-nest the dose delete route in order to be able to delete specific dose instead of /cocktail/id/dose/id -->
+      <!-- check routes to understand this more -->
+      <ul class="list">
+        <li><%= dose.ingredient.name %> - <%= dose.description %> <%=link_to '🗑', dose_path(dose), method: :delete %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="add-ingredient-section">
+    <!-- Button -->
+    <a href="#" class="add-ingredient-btn" data-toggle="modal" data-target="#add-ingredient-modal">Add Ingredient</a>
+    <div class="modal fade" id="add-ingredient-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fade" id="add-ingredient-modal">Add an Ingredient</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- modal -->
+          <div class="modal-body">
+            <%= simple_form_for [@cocktail, @dose], validate: true do |f|%>
+            <%= f.association :ingredient %>
+            <%= f.input :description %>
+            <div class="modal-footer">
+              <%= f.submit 'Add ingredients', class: 'btn btn-outline-dark' %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -5,6 +5,7 @@ class CocktailsController < ApplicationController
   end
 
   def create
+    @cocktails = Cocktail.all
     @cocktail = Cocktail.new(cocktail_params)
 
     if @cocktail.save
@@ -21,6 +22,7 @@ class CocktailsController < ApplicationController
   end
 
   def new
+    @cocktails = Cocktail.all
     @cocktail = Cocktail.new
   end
 

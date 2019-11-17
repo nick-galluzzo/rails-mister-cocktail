@@ -1,2 +1,69 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="container">
+<%= cl_image_tag(@cocktail.photo,
+class: 'page-photo')%>
+<!-- alert -->
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Uh oh!</h4>
+  <p>It looks like you forgot some things...</p>
+  <hr>
+  <%  @review.errors.full_messages.each do |error|%>
+    <li> - <%= error %></li>
+  <% end %>
+  <br>
+  <p>Try again?</p>
+  <br>
+  <p>- OR - </p>
+  <br>
+  <p><%= link_to 'click here', cocktail_path(@cocktail) %> to return to continue browsing.</p>
+</div>
+  <section class="grid-form">
+    <div class="left-container">
+      <a href="#" class="add-review-btn" data-toggle="modal" data-target="#add-review-modal">Add Review</a>
+      <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title fade" id="add-review-modal">Add an Ingredient</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= simple_form_for [@cocktail, @review], validates: true do |f|%>
+              <%= f.input :rating %>
+              <%= f.input :comment %>
+              <div class="modal-footer">
+                <%= f.submit 'Add review', class: 'btn btn-outline-dark' %>
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-list">
+      <div id="review-header">
+        <h1><%= @cocktail.name %> Reviews</h1>
+      </div>
+      <div class="list review-list">
+      <% if @cocktail.reviews.length < 1 %>
+        <p> Sorry, no reviews exist yet. You can be the first! 😀🥂</p>
+      <% else %>
+
+        <% @cocktail.reviews.each do |review| %>
+         <li><%= '⭐️' * review.rating %> -
+             <%= review.comment %>
+         </li>
+      <% end %>
+
+      <% end %>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
